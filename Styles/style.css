@@ -287,13 +287,14 @@ header p {
   display: none;
 }
 
-/* ===== FOOTER ===== */
+/* Footer */
 .footer {
   background: radial-gradient(circle at top, #000814, #001d3d);
   color: #e0e0e0;
   padding: 40px 10%;
   text-align: center;
   border-top: 2px solid #1b263b;
+  margin: 50px 0 0 0;
 }
 
 .footer-content {

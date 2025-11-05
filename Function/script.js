@@ -1,7 +1,5 @@
-// NASA API Key - Get your free key at https://api.nasa.gov/
-const API_KEY = 'DEMO_KEY'; // Replace with your API key for better performance
-
-// === SECTION HANDLING ===
+const API_KEY = 'DEMO_KEY';
+// SECTION HANDLING 
 function showSection(sectionName) {
     document.querySelectorAll('.content-section').forEach(section => {
         section.classList.remove('active');
@@ -14,7 +12,7 @@ function showSection(sectionName) {
     document.querySelector(`.nav-btn[data-section="${sectionName}"]`).classList.add('active');
 }
 
-// === NASA IMAGE LIBRARY ===
+// NASA IMAGE LIBRARY
 async function searchNASA() {
     const searchTerm = document.getElementById('searchInput').value;
     const results = document.getElementById('searchResults');
@@ -58,7 +56,7 @@ async function searchNASA() {
     }
 }
 
-// === ASTEROID DATA ===
+// ASTEROID DATA
 async function fetchAsteroids() {
     const dateInput = document.getElementById('asteroidDate').value;
     const asteroidInfo = document.getElementById('asteroidInfo');
@@ -97,7 +95,7 @@ async function fetchAsteroids() {
     }
 }
 
-// === UI HELPERS ===
+// UI HELPERS
 function createGalleryItem(imageSrc, title, description) {
     const item = document.createElement('div');
     item.className = 'gallery-item';
@@ -142,9 +140,9 @@ function createAsteroidCard(asteroid) {
     return card;
 }
 
-// === EVENT LISTENERS ===
+// EVENT LISTENERS
 document.addEventListener('DOMContentLoaded', () => {
-    // Set default date to today
+    // default date to today
     document.getElementById('asteroidDate').value = new Date().toISOString().split('T')[0];
     
     // Navigation buttons
