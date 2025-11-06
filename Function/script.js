@@ -96,18 +96,40 @@ async function fetchAsteroids() {
 }
 
 // UI HELPERS
+// function createGalleryItem(imageSrc, title, description) {
+//     const item = document.createElement('div');
+//     item.className = 'gallery-item';
+//     item.innerHTML = `
+//         <img src="${imageSrc}" alt="${title}" onerror="this.src='https://via.placeholder.com/300x250/1a1a3e/667eea?text=Image+Not+Available'">
+//         <div class="gallery-item-info">
+//             <h3>${title}</h3>
+//             <p>${description}</p>
+//         </div>
+//     `;
+//     return item;
+// }
+
+
 function createGalleryItem(imageSrc, title, description) {
-    const item = document.createElement('div');
-    item.className = 'gallery-item';
-    item.innerHTML = `
-        <img src="${imageSrc}" alt="${title}" onerror="this.src='https://via.placeholder.com/300x250/1a1a3e/667eea?text=Image+Not+Available'">
-        <div class="gallery-item-info">
-            <h3>${title}</h3>
-            <p>${description}</p>
-        </div>
-    `;
-    return item;
+  const item = document.createElement('div');
+  item.className = 'gallery-item';
+  item.innerHTML = `
+      <img src="${imageSrc}" alt="${title}" 
+        onerror="this.src='https://via.placeholder.com/300x250/1a1a3e/667eea?text=Image+Not+Available'">
+      <div class="gallery-item-info">
+          <h3>${title}</h3>
+          <p>${description}</p>
+      </div>
+  `;
+
+  // ✅ Show modal on click
+  item.addEventListener('click', () => {
+    showImageModal(imageSrc, title, description);
+  });
+
+  return item;
 }
+
 
 function createAsteroidCard(asteroid) {
     const card = document.createElement('div');
