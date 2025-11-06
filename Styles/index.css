@@ -12,7 +12,8 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-} /* Animated Stars Background */
+}
+ /* Animated Stars Background */
 .stars {
   position: fixed;
   top: 0;
@@ -54,7 +55,8 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-} /* Header */
+} 
+/* Header */
 header {
   text-align: center;
   margin-bottom: 40px;
@@ -67,7 +69,7 @@ header h1 {
     135deg,
     #667eea 0%,
     #764ba2 100%
-  ); /* -webkit-background-clip: text; */
+  );
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
@@ -92,7 +94,8 @@ header a:hover {
   color: #8c53ff;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(90, 42, 131, 0.18);
-} /* Navigation */
+} 
+/* Navigation */
 .navigation {
   display: flex;
   justify-content: center;
@@ -119,7 +122,8 @@ header a:hover {
 .nav-btn.active {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-color: transparent;
-} /* Hero */
+}
+ /* Hero */
 .Hero {
   background-color: #42275d32;
   width: 800px;
@@ -164,7 +168,8 @@ span {
   background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
-} /* Footer */
+}
+ /* Footer */
 .footer {
   background: radial-gradient(circle at top, #000814, #001d3d);
   color: #e0e0e0;
@@ -226,7 +231,8 @@ span {
   font-size: 0.85rem;
   color: #aaa;
   text-align: center;
-} /* Responsive Footer */
+}
+ /* Responsive Footer */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;

@@ -43,7 +43,7 @@ async function searchNASA() {
             item.links[0].href,
             itemData.title || 'NASA Image',
             (itemData.description || 'No description available').substring(0, 150) + '...',
-            itemData // send full data for modal
+            itemData
           );
           results.appendChild(galleryItem);
         }
@@ -97,7 +97,7 @@ async function fetchAsteroids() {
   }
 }
 
-// ===== GALLERY ITEM CREATION =====
+// GALLERY ITEM CREATION
 function createGalleryItem(imageSrc, title, description, itemData) {
   const item = document.createElement('div');
   item.className = 'gallery-item';
@@ -110,7 +110,7 @@ function createGalleryItem(imageSrc, title, description, itemData) {
       </div>
   `;
 
-  // Open modal on click
+  // Open modal when clicked
   item.addEventListener('click', () => {
     showImageModal(imageSrc, title, description, itemData);
   });
@@ -118,7 +118,7 @@ function createGalleryItem(imageSrc, title, description, itemData) {
   return item;
 }
 
-// ===== ASTEROID CARD CREATION =====
+// ASTEROID CARD CREATION
 function createAsteroidCard(asteroid) {
   const card = document.createElement('div');
   card.className = 'asteroid-card';
@@ -150,7 +150,7 @@ function createAsteroidCard(asteroid) {
   return card;
 }
 
-// ===== IMAGE MODAL HANDLER =====
+// IMAGE MODAL HANDLER
 function showImageModal(imageSrc, title, description, itemData) {
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('modalImage');
@@ -158,7 +158,7 @@ function showImageModal(imageSrc, title, description, itemData) {
   const modalDescription = document.getElementById('modalDescription');
   const modalExtra = document.getElementById('modalExtra');
 
-  // Fill modal with details
+  // Fill modal details
   modalImg.src = imageSrc;
   modalTitle.textContent = title;
   modalDescription.textContent = description;
@@ -168,12 +168,12 @@ function showImageModal(imageSrc, title, description, itemData) {
     <p><strong>Photographer:</strong> ${itemData.photographer || 'Not listed'}</p>
   `;
 
-  // Show modal & disable scroll
+  // Show modal and disable scroll
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
 }
 
-// ===== EVENT LISTENERS =====
+// EVENT LISTENERS
 document.addEventListener('DOMContentLoaded', () => {
   // Default asteroid date
   document.getElementById('asteroidDate').value = new Date().toISOString().split('T')[0];
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Enter') searchNASA();
   });
 
-  // ===== MODAL CLOSE HANDLERS =====
+  // MODAL CLOSE HANDLERS
   const modal = document.getElementById('imageModal');
   const closeBtn = modal.querySelector('.close-btn');
 
