@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+  min-height: 100vh;
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Animated Stars Background */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.stars::before,
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  box-shadow: 100px 100px #fff, 200px 150px #fff, 300px 250px #fff,
+    400px 350px #fff, 500px 200px #fff, 600px 400px #fff, 700px 100px #fff,
+    800px 300px #fff, 900px 250px #fff, 1000px 150px #fff, 1100px 350px #fff,
+    1200px 400px #fff, 150px 300px #fff, 250px 450px #fff, 350px 50px #fff,
+    450px 500px #fff, 550px 150px #fff, 650px 350px #fff, 750px 450px #fff,
+    850px 50px #fff, 950px 400px #fff;
+  animation: sparkle 3s linear infinite;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease;
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+}
+
+header p {
+  font-size: 1.2em;
+  color: #a8b2d1;
+}
