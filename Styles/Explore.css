@@ -10,6 +10,8 @@ body {
   min-height: 100vh;
   color: #fff;
   position: relative;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
 }
 
@@ -55,8 +57,9 @@ body {
   padding: 20px;
   position: relative;
   z-index: 1;
+  flex: 1 1 auto;
 }
-
+/* Header */
 header {
   text-align: center;
   margin-bottom: 40px;
@@ -77,25 +80,23 @@ header p {
   font-size: 1.2em;
   color: #a8b2d1;
 }
-
-/* Header anchor/link styles */
 header a {
-  color: #5a2a83; /* dark purple */
+  color: #f5eaff;
+  font-weight: 800;
   text-decoration: none;
   padding: 8px 14px;
   border-radius: 8px;
-  background: rgba(90,42,131,0.06);
-  border: 1px solid rgba(90,42,131,0.12);
-  transition: background 0.18s ease, transform 0.15s ease, color 0.15s ease, box-shadow 0.18s ease;
+  transition: background 0.18s ease, transform 0.15s ease, color 0.15s ease,
+    box-shadow 0.18s ease;
   font-size: 1.05rem;
-  margin: 0 12px;
+  margin: 12px;
 }
 
 header a:hover {
-  background: rgba(90,42,131,0.14);
-  color: #efe7ff;
+  background: rgba(90, 42, 131, 0.14);
+  color: #8c53ff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(90,42,131,0.18);
+  box-shadow: 0 8px 24px rgba(90, 42, 131, 0.18);
 }
 
 /* Navigation */
@@ -130,7 +131,7 @@ header a:hover {
   border-color: transparent;
 }
 
-/* Content Sections */
+/* Nasa images Content Sections */
 .content-section {
   display: none;
   animation: fadeIn 0.5s ease;
@@ -146,7 +147,10 @@ header a:hover {
   font-size: 2em;
   color: #fff;
 }
-
+.content-section p {
+  margin: 30px;
+  font-size: larger;
+}
 /* Controls */
 .controls {
   display: flex;
@@ -256,6 +260,10 @@ header a:hover {
   color: #667eea;
   font-size: 1.3em;
 }
+.asteroid-card p {
+  margin: 30px;
+  font-size: larger;
+}
 
 .asteroid-info {
   display: grid;
@@ -307,11 +315,10 @@ header a:hover {
   display: none;
 }
 
-
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -330,12 +337,12 @@ header a:hover {
   border-radius: 12px;
   max-width: 600px;
   width: 90%;
-  max-height: 80vh;        /* ✅ limit height to viewport */
-  overflow-y: auto;        /* ✅ enables internal scroll */
+  max-height: 80vh; /* ✅ limit height to viewport */
+  overflow-y: auto; /* ✅ enables internal scroll */
   text-align: center;
   position: relative;
-  box-shadow: 0 0 25px rgba(255,255,255,0.3);
-  scrollbar-width: thin;   /* Firefox */
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  scrollbar-width: thin; /* Firefox */
 }
 
 /* ✅ optional: style the scrollbar a bit for Chrome/Edge */
@@ -370,8 +377,6 @@ header a:hover {
   color: #ccc;
 }
 
-
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -383,11 +388,6 @@ header a:hover {
   }
 }
 
-
-
-
-
-
 /* Footer */
 .footer {
   background: radial-gradient(circle at top, #000814, #001d3d);
@@ -396,6 +396,7 @@ header a:hover {
   text-align: center;
   border-top: 2px solid #1b263b;
   margin: 50px 0 0 0;
+  flex-shrink: 0;
 }
 
 .footer-content {
@@ -430,7 +431,7 @@ header a:hover {
 }
 
 .footer-links a:hover {
-  color: #63d471;
+  color: #764ba2;
   text-decoration: underline;
 }
 
@@ -451,7 +452,7 @@ header a:hover {
 }
 
 .social-icons a:hover {
-  color: #63d471;
+  color: #764ba2;
 }
 
 .footer-bottom {

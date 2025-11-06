@@ -145,7 +145,7 @@ function createAsteroidCard(asteroid) {
               <strong>${asteroid.absolute_magnitude_h.toFixed(2)}</strong>
           </div>
       </div>
-      ${hazardous ? '<span class="hazardous">⚠️ Potentially Hazardous</span>' : ''}
+      ${hazardous ? '<span class="hazardous">⚠️Potentially Hazardous</span>' : ''}
   `;
   return card;
 }
@@ -193,9 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('searchInput').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') searchNASA();
   });
-
-  // Load default NASA images
-  searchNASA();
 
   // ===== MODAL CLOSE HANDLERS =====
   const modal = document.getElementById('imageModal');
