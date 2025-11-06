@@ -11,6 +11,17 @@
     />
   </head>
   <body>
+    <!-- IMAGE MODAL -->
+    <div id="imageModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <img id="modalImage" src="" alt="NASA Image" />
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <div id="modalExtra" class="extra-info"></div>
+      </div>
+    </div>
+
     <div class="stars"></div>
     <div class="container">
       <header>
@@ -54,17 +65,6 @@
         <div id="asteroidInfo" class="asteroid-container"></div>
       </section>
     </div>
-
-    <!-- Image Modal -->
-<div id="imageModal" class="modal hidden">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <img id="modalImage" src="" alt="NASA Image">
-    <h3 id="modalTitle"></h3>
-    <p id="modalDescription"></p>
-  </div>
-</div>
-
 
     <!-- Footer Section -->
 
