@@ -534,3 +534,48 @@ header a:hover {
   text-align: center;
   margin: 20px 0;
 }
+
+
+
+/* Additional Mobile Adjustments */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6em;
+  }
+
+  header p {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  .content-section p {
+    font-size: 1rem;
+    margin: 15px;
+  }
+
+  .gallery-item img {
+    height: 200px;
+  }
+
+  .asteroid-card p {
+    font-size: 1rem;
+    margin: 15px;
+  }
+
+  .controls {
+    gap: 10px;
+  }
+
+  .modal-content {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    padding: 30px 5%;
+  }
+}
+
+
+
+
