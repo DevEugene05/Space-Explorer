@@ -39,11 +39,14 @@ async function searchNASA() {
       data.collection.items.slice(0, 12).forEach(item => {
         if (item.links && item.links[0]) {
           const itemData = item.data[0];
+          const fullDescription = itemData.description || 'No description available';
+          const shortDescription = fullDescription.substring(0, 150) + '...';
           const galleryItem = createGalleryItem(
             item.links[0].href,
             itemData.title || 'NASA Image',
-            (itemData.description || 'No description available').substring(0, 150) + '...',
-            itemData
+            shortDescription,
+            itemData,
+            fullDescription
           );
           results.appendChild(galleryItem);
         }
@@ -98,7 +101,7 @@ async function fetchAsteroids() {
 }
 
 // GALLERY ITEM CREATION
-function createGalleryItem(imageSrc, title, description, itemData) {
+function createGalleryItem(imageSrc, title, description, itemData, fullDescription) {
   const item = document.createElement('div');
   item.className = 'gallery-item';
   item.innerHTML = `
@@ -112,7 +115,7 @@ function createGalleryItem(imageSrc, title, description, itemData) {
 
   // Open modal when clicked
   item.addEventListener('click', () => {
-    showImageModal(imageSrc, title, description, itemData);
+    showImageModal(imageSrc, title, fullDescription, itemData);
   });
 
   return item;
@@ -161,11 +164,12 @@ function showImageModal(imageSrc, title, description, itemData) {
   // Fill modal details
   modalImg.src = imageSrc;
   modalTitle.textContent = title;
-  modalDescription.textContent = description;
+  modalDescription.innerHTML = description.split('\n').map(para => `<p>${para}</p>`).join('');
   modalExtra.innerHTML = `
     <p><strong>Date Created:</strong> ${itemData.date_created || 'N/A'}</p>
     <p><strong>Center:</strong> ${itemData.center || 'Unknown'}</p>
     <p><strong>Photographer:</strong> ${itemData.photographer || 'Not listed'}</p>
+    <p><strong>Keywords:</strong> ${itemData.keywords ? itemData.keywords.join(', ') : 'None'}</p>
   `;
 
   // Show modal and disable scroll
